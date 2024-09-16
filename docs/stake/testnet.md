@@ -8,7 +8,7 @@ You will need some Skale Testnet Tokens to pay for transaction fees.
 You can get testnet ETH tokens from here:
 https://faucet.skale.network/
 
-- Skale Endpoint: https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar
+- Skale Endpoint: https://testnet.skalenodes.com/v1/juicy-low-small-testnet
 - Account: address which should receive the testnet tokens.
 
 In order to get started, you will also need some RAZOR tokens on Skale Testnet chain. Drop a message in our [Discord server](https://discord.com/invite/Js4pBny2rw) for tokens.
@@ -21,11 +21,11 @@ In order to get started, you will also need some RAZOR tokens on Skale Testnet c
 
    | Particulars        | Value                                                                   |
    | ------------------ | ----------------------------------------------------------------------- |
-   | Network Name       | staging-aware-chief-gianfar                                             |
-   | New RPC URL        | https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar        |
-   | Chain ID           | 1517929550                                                              |
+   | Network Name       | juicy-low-small-testnet                                                 |
+   | New RPC URL        | https://testnet.skalenodes.com/v1/juicy-low-small-testnet               |
+   | Chain ID           | 0x561bf78b                                                              |
    | Currency Symbol    | ETH                                                                     |
-   | Block Explorer URL | https://staging-aware-chief-gianfar.explorer.staging-v3.skalenodes.com/ |
+   | Block Explorer URL | https://juicy-low-small-testnet.explorer.testnet.skalenodes.com/        |
 
    > **Note**: _You can also add network from https://staging.razorscan.io/ by clicking on "Connect wallet" and switching network to Skale._
 
@@ -47,7 +47,7 @@ Docker: You can find more information about installing docker [here](https://doc
 
 Oracle-Node(github): You can check the Razor-go:dev at [develop branch](https://github.com/razor-network/oracle-node/tree/develop).
 
-You can download the docker image of Razor-go:dev - `ab83868` from [here]https://hub.docker.com/layers/razornetwork/razor-go/ab83868/images/sha256-c3d9efc9cbb56fb30544d4eba7c264c7fdb176f3cb8b012e4873883c18394601?context=explore.
+You can download the docker image of Razor-go:dev - `54371f1` from [here]https://hub.docker.com/layers/razornetwork/razor-go/54371f1/images/sha256-30770a4b5b427ea1e9542842de208f08df76668923465d61463e8be3589d53b6?context=explore.
 
 ### Run the Razor Network Docker Node {#run-the-razor-network-docker-node}
 
@@ -87,7 +87,7 @@ There are a set of parameters that are configurable. These include:
 - Maximum age of log file: This is the maximum number of days to retain old log files.
 
 ```
-docker exec -it razor-go razor setConfig --provider https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar --gasmultiplier 1 --buffer 20 --wait 30 --gasprice 0 --logLevel debug --gasLimit 2 --rpcTimeout 10 --httpTimeout 10 --logFileMaxSize 200 --logFileMaxBackups 52 --logFileMaxAge 365
+docker exec -it razor-go razor setConfig --provider https://testnet.skalenodes.com/v1/juicy-low-small-testnet --gasmultiplier 1 --buffer 5 --wait 1 --gasprice 0 --logLevel debug --gasLimit 2 --rpcTimeout 10 --httpTimeout 10 --logFileMaxSize 200 --logFileMaxBackups 10 --logFileMaxAge 60
 ```
 
 > **Note**: _This will create `razor.yaml` with all necessary parameter at `$HOME/.razor` directory. We can view that via command:`cat $HOME/.razor/razor.yaml` ._
